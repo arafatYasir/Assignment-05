@@ -1,6 +1,7 @@
 var totalPrice = 0.00;
 var n = 1;
 
+// Adding products in the cart
 function add(name, price)
 {
     const product = document.createElement("h3");
@@ -18,7 +19,7 @@ function add(name, price)
         purchaseBtn.disabled = false;
     }
 }
-
+// Coupon button function
 document.getElementById("coupon-field").addEventListener("keyup", function() {
     const couponField = document.getElementById("coupon-field");
     const couponCode = couponField.value;
@@ -29,12 +30,18 @@ document.getElementById("coupon-field").addEventListener("keyup", function() {
     else {
         document.getElementById("coupon-apply-btn").disabled = true;
     }
-
-    console.log(couponCode);
 });
-// function discount()
-// {
-//     const couponField = document.getElementById("coupon-field");
-//     const coupon = couponField.value;
-//     console.log(coupon);
-// }
+
+// Coupon Apply button function
+document.getElementById("coupon-apply-btn").addEventListener("click", function() {
+    if(totalPrice >= 200) {
+        const discountAmount = (totalPrice / 100) * 20;
+        document.getElementById("discount").innerText = discountAmount.toFixed(2) + " TK";
+
+        const total = totalPrice - discountAmount;
+        document.getElementById("total").innerText = total.toFixed(2) + " TK";
+    }
+    else {
+        alert("To recieve discount you have to buy at least 200 TK product");
+    }
+});
