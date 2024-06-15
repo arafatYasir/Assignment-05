@@ -35,7 +35,8 @@
             <h1 class="text-4xl font-semibold mt-28 mb-8">Kitchenware</h1>
             <div class="flex flex-col md:flex-row items-center md:items-start w-auto gap-10">
                 <!-- Card 1 -->
-                <div onclick="add('K. Accessories', 39.00)" class="card w-72 h-[330px] bg-base-100 shadow-xl rounded-none">
+                <div onclick="add('K. Accessories', 39.00)"
+                    class="card w-72 h-[330px] bg-base-100 shadow-xl rounded-none">
                     <figure class="py-3 bg-gray-200">
                         <img src="images/prod1.png" />
                     </figure>
@@ -54,7 +55,8 @@
                 </div>
 
                 <!-- Card 2 -->
-                <div onclick="add('K. Accessories', 25.00)" class="card w-72 h-[330px] bg-base-100 shadow-xl rounded-none">
+                <div onclick="add('K. Accessories', 25.00)"
+                    class="card w-72 h-[330px] bg-base-100 shadow-xl rounded-none">
                     <figure class="py-3 bg-gray-200">
                         <img src="images/prod2.png" />
                     </figure>
@@ -97,7 +99,8 @@
             <h1 class="text-4xl font-semibold mt-14 mb-8">Sportswear</h1>
             <div class="flex flex-col md:flex-row items-center md:items-start w-auto gap-10">
                 <!-- Card 1 -->
-                <div onclick="add('K. Accessories', 49.00)" class="card w-72 h-[330px] bg-base-100 shadow-xl rounded-none">
+                <div onclick="add('K. Accessories', 49.00)"
+                    class="card w-72 h-[330px] bg-base-100 shadow-xl rounded-none">
                     <figure class="py-3 bg-gray-200">
                         <img src="images/prod4.png" />
                     </figure>
@@ -116,7 +119,8 @@
                 </div>
 
                 <!-- Card 2 -->
-                <div onclick="add('K. Accessories', 69.00)" class="card w-72 h-[330px] bg-base-100 shadow-xl rounded-none">
+                <div onclick="add('K. Accessories', 69.00)"
+                    class="card w-72 h-[330px] bg-base-100 shadow-xl rounded-none">
                     <figure class="py-3 bg-gray-200">
                         <img src="images/prod5.png" />
                     </figure>
@@ -135,7 +139,8 @@
                 </div>
 
                 <!-- Card 3 -->
-                <div onclick="add('K. Accessories', 159.00)" class="card w-72 h-[330px] bg-base-100 shadow-xl rounded-none">
+                <div onclick="add('K. Accessories', 159.00)"
+                    class="card w-72 h-[330px] bg-base-100 shadow-xl rounded-none">
                     <figure class="py-3 bg-gray-200">
                         <img src="images/prod6.png" />
                     </figure>
@@ -160,7 +165,8 @@
             <div class="bg-slate-100 px-5 py-5 pr-10 rounded-lg mb-7">
                 <h4 class="text-2xl font-medium mb-4">Have Coupon?</h4>
                 <div class="relative">
-                    <input class="px-2 py-2 h-10 border text-xl" type="text" placeholder="Coupon Code">
+                    <input id="coupon-field" class="px-2 py-2 h-10 border text-xl" type="text"
+                        placeholder="Coupon Code">
                     <button class="absolute md:right-0 text-white font-semibold text-xl bg-[#E527B2] px-2 py-1.5 h-10"
                         disabled>Apply</button>
                 </div>
@@ -182,8 +188,24 @@
 
                 <!-- Purchase Btn -->
                 <div class="text-center">
-                    <button class="text-xl font-semibold text-white bg-[#E527B2] px-16 py-4 rounded-lg" disabled>Make
-                        Purchase</button>
+                    <!-- <button id="purchase-btn" class="text-xl font-semibold text-white bg-[#E527B2] px-16 py-4 rounded-lg" disabled>Make
+                        Purchase</button> -->
+
+                    <!-- Open the modal using ID.showModal() method -->
+                    <button id="purchase-btn" disabled class="text-xl font-semibold text-white bg-[#E527B2] px-16 py-4 rounded-lg" onclick="my_modal_5.showModal()">Make Purchase</button>
+                    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+                        <div class="modal-box py-20">
+                            <img class="mx-auto mb-10" src="images/congo.png" alt="">
+                            <h3 class="font-bold text-5xl mb-4">Congratulations</h3>
+                            <p class="py-4 text-xl text-[#1111117b]">Your Purchase the product</p>
+                            <div class="modal-action justify-center">
+                                <form method="dialog">
+                                    <!-- if there is a button in form, it will close the modal -->
+                                    <button class="text-xl font-semibold text-white bg-[#E527B2] px-10 py-4 rounded-lg">Go Home</button>
+                                </form>
+                            </div>
+                        </div>
+                    </dialog>
                 </div>
             </div>
         </div>

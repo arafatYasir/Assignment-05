@@ -1,4 +1,4 @@
-var totalPrice = 0;
+var totalPrice = 0.00;
 var n = 1;
 
 function add(name, price)
@@ -12,4 +12,16 @@ function add(name, price)
     totalPrice += price;
     document.getElementById("total-price").innerText = totalPrice + " TK";
     n++;
+    
+    if(totalPrice > 0) {
+        const purchaseBtn = document.getElementById("purchase-btn");
+        purchaseBtn.disabled = false;
+    }
 }
+
+// function discount()
+// {
+//     const couponField = document.getElementById("coupon-field");
+//     const coupon = couponField.value;
+//     console.log(coupon);
+// }
