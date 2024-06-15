@@ -167,16 +167,18 @@
                 <div class="relative">
                     <input id="coupon-field" class="px-2 py-2 h-10 border text-xl" type="text"
                         placeholder="Coupon Code">
-                    <button id="coupon-apply-btn" class="absolute md:right-0 text-white font-semibold text-xl bg-[#E527B2] px-2 py-1.5 h-10"
+                    <button id="coupon-apply-btn"
+                        class="absolute md:right-0 text-white font-semibold text-xl bg-[#E527B2] px-2 py-1.5 h-10"
                         disabled>Apply</button>
                 </div>
             </div>
 
             <!-- Purchase Section -->
             <div class="bg-slate-100 px-5 py-5 pr-10 rounded-lg">
+                <h3 class="mb-4 text-2xl font-medium">Cart:</h3>
+                <hr class="w-72 mb-5">
                 <div id="cart-section" class="text-2xl font-medium mb-5">
-                    <h3 class="mb-4">Cart:</h3>
-                    <hr class="w-72 mb-5">
+
                 </div>
                 <hr class="w-72 mb-5">
                 <h3 class="text-2xl font-medium mb-5">Total Price: <span class="text-[#1111117b]"
@@ -192,7 +194,9 @@
                         Purchase</button> -->
 
                     <!-- Open the modal using ID.showModal() method -->
-                    <button id="purchase-btn" disabled class="text-xl font-semibold text-white bg-[#E527B2] px-16 py-4 rounded-lg" onclick="my_modal_5.showModal()">Make Purchase</button>
+                    <button id="purchase-btn" disabled
+                        class="text-xl font-semibold text-white bg-[#E527B2] px-16 py-4 rounded-lg"
+                        onclick="my_modal_5.showModal()">Make Purchase</button>
                     <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
                         <div class="modal-box py-20">
                             <img class="mx-auto mb-10" src="images/congo.png" alt="">
@@ -201,7 +205,9 @@
                             <div class="modal-action justify-center">
                                 <form method="dialog">
                                     <!-- if there is a button in form, it will close the modal -->
-                                    <button class="text-xl font-semibold text-white bg-[#E527B2] px-10 py-4 rounded-lg">Go Home</button>
+                                    <button id="home-btn"
+                                        class="text-xl font-semibold text-white bg-[#E527B2] px-10 py-4 rounded-lg">Go
+                                        Home</button>
                                 </form>
                             </div>
                         </div>
