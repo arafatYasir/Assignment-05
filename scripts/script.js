@@ -19,6 +19,19 @@ function add(name, price)
     }
 }
 
+document.getElementById("coupon-field").addEventListener("keyup", function() {
+    const couponField = document.getElementById("coupon-field");
+    const couponCode = couponField.value;
+    
+    if(couponCode == "SELL20") {
+        document.getElementById("coupon-apply-btn").disabled = false;
+    }
+    else {
+        document.getElementById("coupon-apply-btn").disabled = true;
+    }
+
+    console.log(couponCode);
+});
 // function discount()
 // {
 //     const couponField = document.getElementById("coupon-field");
