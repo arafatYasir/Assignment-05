@@ -12,10 +12,10 @@
 </head>
 
 <body>
-    <header class="flex items-center justify-center gap-20 bg-[#F9F6E2]">
+    <header class="flex flex-col-reverse md:flex-row items-center justify-center md:gap-20 bg-[#F9F6E2] pb-5 md:pb-10">
         <div>
-            <h3 class="text-2xl font-medium mb-9 text-center">---SALE FEVER---</h3>
-            <h1 class="text-5xl font-bold mb-16">Purchase TK 200 or <br>
+            <h3 class="md:text-2xl text-xl font-medium mb-5 text-center">---SALE FEVER---</h3>
+            <h1 class="md:text-5xl text-3xl font-bold mb-10">Purchase TK 200 or <br>
                 above & get <span class="text-[#E527B2]">20% off</span>
             </h1>
             <div class="text-xl font-medium text-center">Use Promo Code
@@ -23,7 +23,7 @@
             </div>
         </div>
 
-        <div class="mb-8">
+        <div>
             <img src="images/Summer 1.png" alt="banner-image">
         </div>
     </header>
@@ -35,7 +35,7 @@
             <h1 class="text-4xl font-semibold mt-28 mb-8">Kitchenware</h1>
             <div class="flex flex-col md:flex-row items-center md:items-start w-auto gap-10">
                 <!-- Card 1 -->
-                <div class="card w-72 h-[330px] bg-base-100 shadow-xl rounded-none">
+                <div onclick="add('K. Accessories', 39.00)" class="card w-72 h-[330px] bg-base-100 shadow-xl rounded-none">
                     <figure class="py-3 bg-gray-200">
                         <img src="images/prod1.png" />
                     </figure>
@@ -54,7 +54,7 @@
                 </div>
 
                 <!-- Card 2 -->
-                <div class="card w-72 h-[330px] bg-base-100 shadow-xl rounded-none">
+                <div onclick="add('K. Accessories', 25.00)" class="card w-72 h-[330px] bg-base-100 shadow-xl rounded-none">
                     <figure class="py-3 bg-gray-200">
                         <img src="images/prod2.png" />
                     </figure>
@@ -73,7 +73,7 @@
                 </div>
 
                 <!-- Card 3 -->
-                <div class="card w-72 h-[330px] bg-base-100 shadow-xl rounded-none">
+                <div onclick="add('Home Cooker', 49.00)" class="card w-72 h-[330px] bg-base-100 shadow-xl rounded-none">
                     <figure class="py-3 bg-gray-200">
                         <img src="images/prod3.png" />
                     </figure>
@@ -97,7 +97,7 @@
             <h1 class="text-4xl font-semibold mt-14 mb-8">Sportswear</h1>
             <div class="flex flex-col md:flex-row items-center md:items-start w-auto gap-10">
                 <!-- Card 1 -->
-                <div class="card w-72 h-[330px] bg-base-100 shadow-xl rounded-none">
+                <div onclick="add('K. Accessories', 49.00)" class="card w-72 h-[330px] bg-base-100 shadow-xl rounded-none">
                     <figure class="py-3 bg-gray-200">
                         <img src="images/prod4.png" />
                     </figure>
@@ -116,7 +116,7 @@
                 </div>
 
                 <!-- Card 2 -->
-                <div class="card w-72 h-[330px] bg-base-100 shadow-xl rounded-none">
+                <div onclick="add('K. Accessories', 69.00)" class="card w-72 h-[330px] bg-base-100 shadow-xl rounded-none">
                     <figure class="py-3 bg-gray-200">
                         <img src="images/prod5.png" />
                     </figure>
@@ -135,7 +135,7 @@
                 </div>
 
                 <!-- Card 3 -->
-                <div class="card w-72 h-[330px] bg-base-100 shadow-xl rounded-none">
+                <div onclick="add('K. Accessories', 159.00)" class="card w-72 h-[330px] bg-base-100 shadow-xl rounded-none">
                     <figure class="py-3 bg-gray-200">
                         <img src="images/prod6.png" />
                     </figure>
@@ -157,20 +157,39 @@
 
         <div class="mt-[180px]">
             <!-- Coupon Section -->
-            <div class="bg-slate-100 px-5 py-5 pr-10 rounded-lg">
+            <div class="bg-slate-100 px-5 py-5 pr-10 rounded-lg mb-7">
                 <h4 class="text-2xl font-medium mb-4">Have Coupon?</h4>
                 <div class="relative">
                     <input class="px-2 py-2 h-10 border text-xl" type="text" placeholder="Coupon Code">
-                    <button class="absolute right-0 text-white font-semibold text-xl bg-[#E527B2] px-2 py-1.5 h-10"
+                    <button class="absolute md:right-0 text-white font-semibold text-xl bg-[#E527B2] px-2 py-1.5 h-10"
                         disabled>Apply</button>
                 </div>
             </div>
 
             <!-- Purchase Section -->
-            <div></div>
+            <div class="bg-slate-100 px-5 py-5 pr-10 rounded-lg">
+                <div id="cart-section" class="text-2xl font-medium mb-5">
+                    <h3 class="mb-4">Cart:</h3>
+                    <hr class="w-72 mb-5">
+                </div>
+                <hr class="w-72 mb-5">
+                <h3 class="text-2xl font-medium mb-5">Total Price: <span class="text-[#1111117b]"
+                        id="total-price"></span></h3>
+                <h3 class="text-2xl font-medium mb-5">Discount: <span class="text-[#1111117b]" id="discount"></span>
+                </h3>
+                <h3 class="text-2xl font-medium">Total: <span class="text-[#1111117b]" id="total"></span></h3>
+                <hr class="w-72 mb-5">
+
+                <!-- Purchase Btn -->
+                <div class="text-center">
+                    <button class="text-xl font-semibold text-white bg-[#E527B2] px-16 py-4 rounded-lg" disabled>Make
+                        Purchase</button>
+                </div>
+            </div>
         </div>
     </main>
 
+    <script src="scripts/script.js"></script>
 </body>
 
 </html>
